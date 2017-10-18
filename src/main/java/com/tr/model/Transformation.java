@@ -74,22 +74,21 @@ public class Transformation implements ITransformaion {
         }
         arab_num=arab_num%1000;
  
-        loop=arab_num/900;
+        /*loop=arab_num/900;
         for(int i=1; i<=loop;i++){
             roman=roman+"CM";
-        }
+        }*/
+        
+        if( (arab_num/900)>=1 ) roman=roman+"CM";
+        
         arab_num=arab_num%900;
  
-        loop=arab_num/500;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"D";
-        }
+        if( (arab_num/500)>=1 ) roman=roman+"D";
+        
         arab_num=arab_num%500;
  
-        loop=arab_num/400;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"CD";
-        }
+        if( (arab_num/400)>=1 ) roman=roman+"CD";
+        
         arab_num=arab_num%400;
  
         loop=arab_num/100;
@@ -98,22 +97,14 @@ public class Transformation implements ITransformaion {
         }
         arab_num=arab_num%100;
  
-        loop=arab_num/90;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"XC";
-        }
+        if( (arab_num/90)>=1 ) roman=roman+"XC";
+        
         arab_num=arab_num%90;
  
-        loop=arab_num/50;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"L";
-        }
+        if( (arab_num/50)>=1 ) roman=roman+"L";
         arab_num=arab_num%50;
  
-        loop=arab_num/40;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"XL";
-        }
+        if( (arab_num/40)>=1 ) roman=roman+"XL";
         arab_num=arab_num%40;
  
         loop=arab_num/10;
@@ -122,25 +113,18 @@ public class Transformation implements ITransformaion {
         }
         arab_num=arab_num%10;
  
-        loop=arab_num/9;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"IX";
-        }
+        if( (arab_num/9)>=1 ) roman=roman+"IX";
+        
         arab_num=arab_num%9;
  
-        loop=arab_num/5;
-        for(int i=1; i<=loop;i++){
-            roman=roman+"V";
-        }
+        if( (arab_num/5)>=1 ) roman=roman+"V";
+        
         arab_num=arab_num%5;
  
-        loop=arab_num/4; 
-        for(int i=1; i<=loop;i++){
-            roman=roman+"IV";
-        }
+        if( (arab_num/4)>=1 ) roman=roman+"IV";
         arab_num=arab_num%4;
  
-        loop=arab_num/1; // or simply loop=n or i<=n in the condition part of the loop
+        loop=arab_num/1; 
         for(int i=1; i<=loop;i++){
             roman=roman+"I";
         }
